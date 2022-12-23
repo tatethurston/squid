@@ -1,0 +1,18 @@
+{
+  "name": "squid",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "(cd apps/template && pnpm lint)",
+    "test": "(cd apps/template && pnpm test)",
+    "test:ci": "(cd apps/template && pnpm test)",
+    "build": "(cd apps/template && pnpm build)"
+  },
+  "keywords": [],
+  "author": "Tate Thurston <tatethurston@gmail.com>",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {}
+}

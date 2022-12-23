@@ -1,0 +1,30 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16
+    commands:
+      - npm install -g pnpm
+      - pnpm install --frozen-lockfile
+  pre_build:
+    commands:
+      - pnpm lint
+      - pnpm test:ci
+  build:
+    commands:
+      - pnpm build
+# reports:
+#   report-group-name-or-arn:
+#     files:
+#       - location
+#       - location
+#     base-directory: location
+#     discard-paths: no | yes
+#     file-format: report-format
+artifacts:
+  files:
+    - 'apps/template/.next/standalone/**/*'
+cache:
+  paths:
+    - '/codebuild/output/.pnpm-store/**/*'
